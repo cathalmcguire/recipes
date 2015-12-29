@@ -1,11 +1,11 @@
-<h1>{{title}}<h1>
-<p class="description">{{description}}</p>
-<img src={{image}} height="200" width="350"/>
+<h1>{{recipe.title}}<h1>
+<p class="description">{{recipe.description}}</p>
+<!--<img src={{recipe.image}} height="200" width="350"/>-->
 
 <section id="ingredients">
 	<h2>Ingredients</h2>
 	<p>
-		<ul ng-repeat="ingredient in ingredients">
+		<ul ng-repeat="ingredient in recipe.ingredients">
 			<li>{{ingredient}}</li>
 		</ul>
 	</p>
@@ -13,7 +13,7 @@
 
 <section id="steps">
 	<h2>Method</h2>
-	<ol ng-repeat="step in steps">
+	<ol ng-repeat="step in recipe.steps">
 		<li>{{step}}</li>
 	</ol>
 </section>

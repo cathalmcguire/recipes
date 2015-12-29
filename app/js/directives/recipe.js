@@ -4,11 +4,7 @@ angular.module('recipeApp')
     restrict: 'A',
     templateUrl: 'partials/recipe.html',
     scope: {
-      image: '=image',
-      title: '=title',
-      description: '@description',
-      ingredients: '=ingredients',
-      steps: '=steps'
+      recipe: '=recipe'
     },
     link: function(scope) {
       scope.clickMe = function () {
