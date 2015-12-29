@@ -11,7 +11,9 @@ angular.module('recipeApp')
       steps: '=steps'
     },
     link: function(scope) {
-      console.log(scope);
+      scope.clickMe = function () {
+        console.log('xxxxxxxxxxxxxxxxxx');
+      };
     }
   };
 });
