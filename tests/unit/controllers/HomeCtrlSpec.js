@@ -11,6 +11,7 @@ describe('Home Controller', function() {
       $scope: $scope
     });
   }));
+
   it('sets message to scope', function () {
     expect($scope.message).toEqual('Home');
   });
