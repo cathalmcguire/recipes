@@ -4,14 +4,16 @@ angular.module('recipeApp')
     restrict: 'A',
     templateUrl: 'partials/recipe.html',
     scope: {
-      title: '=title',
       image: '=image',
-      description: '=description',
+      title: '=title',
+      description: '@description',
       ingredients: '=ingredients',
-      steps: 'steps'
+      steps: '=steps'
     },
-    link: function() {
-      console.log('xxxxxxxxxxxxxxxxxxx');
+    link: function(scope) {
+      scope.clickMe = function () {
+        console.log('xxxxxxxxxxxxxxxxxx');
+      };
     }
   };
 });
