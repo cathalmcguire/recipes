@@ -1,0 +1,19 @@
+<h1>{{title}}<h1>
+<p class="desc">{{desc}}</p>
+<img src={{image}} height="200" width="350"/>
+
+<section id="ingredients">
+	<h2>Ingredients</h2>
+	<p>
+		<ul ng-repeat="ingredient in ingredients">
+			<li>{{ingredient}}</li>
+		</ul>
+	</p>
+</section>
+
+<section id="steps">
+	<h2>Method</h2>
+	<ol ng-repeat="step in steps">
+		<li>{{step}}</li>
+	</ol>
+</section>
