@@ -1,7 +1,7 @@
 'use strict';
 angular.module('recipeApp', ['ngRoute'])
 
-.config(['$routeProvider', function($routeProvider){
+.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider){
   $routeProvider
   .when('/', {
     templateUrl: 'partials/home.html',
@@ -10,4 +10,7 @@ angular.module('recipeApp', ['ngRoute'])
   .otherwise({
     redirectTo: '/'
   });
+  
+  $locationProvider.html5Mode(true);
+
 }]);
