@@ -1,20 +1,24 @@
-describe('Home Controller', function() {
+/* global inject, module, expect */
+(function(){
+  'use strict';
 
-  beforeEach(module('recipeApp'));
+  describe('Home Controller', function() {
 
-  var homeController,
-      $scope;
+    beforeEach(module('recipeApp'));
 
-  beforeEach(inject(function ($rootScope, $controller) {
-    $scope = $rootScope.$new();
-    homeController = $controller('HomeCtrl', {
-      $scope: $scope
+    var homeController,
+        $scope;
+
+    beforeEach(inject(function ($rootScope, $controller) {
+      $scope = $rootScope.$new();
+      homeController = $controller('HomeCtrl', {
+        $scope: $scope
+      });
+    }));
+
+    it('sets message to scope', function () {
+      expect($scope.message).toEqual('Home');
     });
-  }));
 
-  it('sets message to scope', function () {
-    expect($scope.message).toEqual('Home');
   });
-
-});
-
+}());

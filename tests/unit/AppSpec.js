@@ -1,34 +1,39 @@
-describe('app.js', function() {
+/* global inject, module, expect */
+(function(){
+  'use strict';
 
-  beforeEach(module('recipeApp'));
+  describe('app.js', function() {
 
-  var location, 
-      route, 
-      rootScope;
+    beforeEach(module('recipeApp'));
 
-  beforeEach(inject(
-    function($location, $route, $rootScope) {
-        location = $location;
-        route = $route;
-        rootScope = $rootScope;
-  }));
+    var location, 
+        route, 
+        rootScope;
 
-  describe('Home route', function() {
-    beforeEach(inject(function($httpBackend) {
-      $httpBackend.expectGET('partials/home.html').respond('<div>mock template</div>');
-      $httpBackend.expectGET('/').respond(200);
+    beforeEach(inject(
+      function($location, $route, $rootScope) {
+          location = $location;
+          route = $route;
+          rootScope = $rootScope;
     }));
 
-    it('should load the home page on successful load of /', function() {
-      location.path('/');
-      rootScope.$digest();
-      expect(route.current.controller).toBe('HomeCtrl')
-    });
+    describe('Home route', function() {
+      beforeEach(inject(function($httpBackend) {
+        $httpBackend.expectGET('partials/home.html').respond('<div>mock template</div>');
+        $httpBackend.expectGET('/').respond(200);
+      }));
 
-    it('should redirect to the home page on load of undefined route', function() {
-      location.path('/undefinedroute');
-      rootScope.$digest();
-      expect(route.current.controller).toBe('HomeCtrl')
-    });
-  });    
-});
+      it('should load the home page on successful load of /', function() {
+        location.path('/');
+        rootScope.$digest();
+        expect(route.current.controller).toBe('HomeCtrl');
+      });
+
+      it('should redirect to the home page on load of undefined route', function() {
+        location.path('/undefinedroute');
+        rootScope.$digest();
+        expect(route.current.controller).toBe('HomeCtrl');
+      });
+    });    
+  });
+}());
