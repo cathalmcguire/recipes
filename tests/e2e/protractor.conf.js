@@ -6,7 +6,7 @@ exports.config = {
     'browserName': 'chrome'
   },
   baseUrl: 'http://recipes.com/',
-  rootElement: '*[ng-app]',
+  rootElement: 'div',
 
   framework: 'custom',
 
