@@ -6,7 +6,6 @@ exports.config = {
     'browserName': 'chrome'
   },
   baseUrl: 'http://recipes.com/',
-  rootElement: 'div',
 
   framework: 'custom',
 
