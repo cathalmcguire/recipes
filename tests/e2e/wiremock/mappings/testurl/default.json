@@ -1,0 +1,15 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "/testurl"
+  },
+  "response": {
+    "status": "200",
+    "bodyFileName": "testurl/default.json",
+    "headers": {
+      "content-Type": "application/json",
+      "Access-Control-Allow-Origin": "http://127.0.0.1:3000",
+      "Access-Control-Allow-Credentials": "true"
+    }
+  }
+}

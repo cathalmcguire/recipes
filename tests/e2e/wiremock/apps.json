@@ -1,0 +1,25 @@
+{
+  "apps": [{
+    "name": "wiremock",
+    "cwd": ".",
+    "args": [
+      "-jar",
+      "tests/e2e/wiremock/lib/wiremock-1.57-standalone.jar",
+      "--port=3001",
+      "--verbose",
+      "--root-dir=tests/e2e/wiremock"
+    ],
+    "script": "java",
+    "exex_intrtpreter": "none",
+    "exec_mode": "fork",
+    "error_file": "tests/e2e/wiremock/logs/err.log",
+    "out_file": "tests/e2e/wiremock/logs/out.log",
+    "merge_logs": true
+  }, {
+    "name": "recipes",
+    "script": "tests/e2e/wiremock/server/recipes/server.js",
+    "error_file": "tests/e2e/wiremock/server/recipes/logs/err.log",
+    "out_file": "tests/e2e/wiremock/server/recipes/logs/out.log",
+    "merge_logs": true
+  }]
+}

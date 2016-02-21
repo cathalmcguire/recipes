@@ -3,7 +3,7 @@
   'use strict';
 
   angular.module('recipeApp')
-  .controller('HomeCtrl', ['$scope', function ($scope) {
+  .controller('HomeCtrl', ['$scope', '$http', function ($scope, $http) {
     $scope.message = 'Home';
     $scope.recipe = {
       title: 'carbonara',
@@ -14,5 +14,13 @@
         'step3'
       ]
     };
+    $http({
+        method: 'GET',
+        url: 'http://127.0.0.1:3001/testurl'
+    }).then(function (response) {
+      console.log('success');
+    }, function errorCallback(response) {
+      console.log('OH NO!');
+    });
   }]);
 }());
