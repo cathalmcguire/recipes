@@ -18,7 +18,7 @@
     "protractor-cucumber-framework": "^0.3.3"
   },
   "scripts": {
-    "postinstall": "node_modules/protractor/bin/webdriver-manager update",
+    "postinstall": "node ./node_modules/protractor/bin/webdriver-manager update",
     "start": "http-server ./app",
     "protractor": "node_modules/protractor/bin/protractor tests/e2e/protractor.conf.js",
     "unit": "node_modules/karma/bin/karma start tests/unit/karma.conf.js"
